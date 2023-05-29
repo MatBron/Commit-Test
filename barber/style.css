@@ -183,3 +183,82 @@ nav ul li a{
     width: 70%;
     border-radius: 10px;
 }
+
+.FEATURES h1{
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: 100;
+    color: #009688;
+
+}
+
+.FEATURES-desc{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+
+.FEATURES-icon .fa{
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    border-radius: 8px;
+    color: #009688;
+    border: 1px solid #009688;
+}
+
+.FEATURES-text{
+    padding: 0 20px;
+    text-align: initial;
+}
+
+@media screen and (max-width: 770px){
+    .title-text h1{
+        font-size: 35px;
+    
+    }
+    .FEATURES {
+        flex-basis: 100%;
+    }
+
+    .FEATURES-img {
+        flex-basis: 100%;
+    }
+
+    .FEATURES-img img {
+        width: 100%;
+        border-radius: 10px;
+    }
+}
+
+/*--feature--*/
+
+#SERVICES{
+    width: 100%;
+    padding: 70px 0;
+    background: #efefef;
+}
+
+.SERVICES-box {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.single-service{
+    flex-basis: 48%;
+    text-align: center;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.single-service img{
+    width: 100%;
+    border-radius: 7px;
+    
+}
