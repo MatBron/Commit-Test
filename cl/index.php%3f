@@ -3,9 +3,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en" xml:lang="en">
 <head>
 <title>Colonel Trading</title>
-<base href="#" />
+<base href="http://www.coloneltrading.com/" />
 <meta name="description" content="The company have been established in 2008. We are importers, working with the local security offices offering them what is new in the market. " />
-<link rel="icon" href="image/icon/Colonel.png" type="image/png">
+<link href="http://www.coloneltrading.com/image/data/ColonelFavicon31.png" rel="icon" />
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/eCart/stylesheet/stylesheet.css" />
 <link  rel="stylesheet" type="text/css" href="catalog/view/theme/eCart/stylesheet/jquery.tweet.css" media="all" /> 
 <link  rel="stylesheet" type="text/css" href="catalog/view/theme/eCart/stylesheet/jquery.miniColors.css" media="all" /> 
@@ -224,19 +224,18 @@ $(document).ready(function($){
 		<div class="container-top">
 			<!-- ***** LINKS Start ***** -->
 			<div class="links">
-				<a href="index.html">Home</a>
-				<!-- <a href="#" id="wishlist_total">Wish List (0)</a> -->
-				<a href="view/login.html">My Account</a> 
-				<a href="view/contactus.html">Contact Us</a>
-				<a href="view/contactus.html">Newsletter</a>
-				<a href="view/login.html">Checkout</a>
+				<a href="http://www.coloneltrading.com">Home</a>
+				<!-- <a href="http://www.coloneltrading.com/index.php?route=account/wishlist" id="wishlist_total">Wish List (0)</a> -->
+				<a href="http://www.coloneltrading.com/index.php?route=account/account">My Account</a> 
+				<a href="http://www.coloneltrading.com/index.php?route=information/contact">Contact Us</a>
+				<a href="http://www.coloneltrading.com/index.php?route=account/newsletter">Newsletter</a>
+				<a href="http://www.coloneltrading.com/index.php?route=checkout/checkout">Checkout</a>
 			</div>
 			<!-- ***** LINKS End ***** -->
 			
 			<!-- ***** WELCOME Start ***** -->
 			<div id="welcome">
-								Welcome visitor  <a href="view/login.html">login</a> or <a href="view/register.html">Register here</a>							
-			</div>
+								Welcome visitor  <a href="http://www.coloneltrading.com/index.php?route=account/login">login</a> or <a href="http://www.coloneltrading.com/index.php?route=account/register">Register here</a>							</div>
 			<!-- ***** WELCOME End ***** -->
 		</div>
 	</div>
@@ -251,18 +250,18 @@ $(document).ready(function($){
 			<!-- ***** SEARCH End ***** -->
 
 			<!-- ***** LOGO Start ***** -->
-						<div id="logo"><a href="index.html"><img src="image/logo/ColonelLogo.png" title="Colonel Trading" alt="Colonel Trading" /></a></div>
-			<!-- ***** LOGO End ***** -->
+						<div id="logo"><a href="http://www.coloneltrading.com"><img src="http://www.coloneltrading.com/image/data/ColonelLogo.png" title="Colonel Trading" alt="Colonel Trading" /></a></div>
+						<!-- ***** LOGO End ***** -->
 			
 			<!-- ***** NOTIFICATIONS Start ***** -->
 						<div id="header-notifications">
 				<ul>
-					<li><a id="wishlist_total_new" href="view/login.html">Wish List&nbsp;&nbsp;&nbsp;&nbsp;<span>0</span></a></li><!-- Separated id="wishlist_total" -->
-					<li><a id="cart_total_new" href="view/addtocart.html">Shopping Cart&nbsp;&nbsp;&nbsp;&nbsp;<span>0</span></a></li><!-- id="cart_total" -->
+					<li><a id="wishlist_total_new" href="http://www.coloneltrading.com/index.php?route=account/wishlist">Wish List&nbsp;&nbsp;&nbsp;&nbsp;<span>0</span></a></li><!-- Separated id="wishlist_total" -->
+					<li><a id="cart_total_new" href="http://www.coloneltrading.com/index.php?route=checkout/cart">Shopping Cart&nbsp;&nbsp;&nbsp;&nbsp;<span>0</span></a></li><!-- id="cart_total" -->
 					<li><a id="compare_total_new" href="http://www.coloneltrading.com/index.php?route=product/compare">Product Compare&nbsp;&nbsp;&nbsp;&nbsp;<span>0</span></a></li><!-- Separated id="compare_total" -->
 				</ul>
 			</div>
-			<!-- ***** NOTIFICATIONS End ***** -->
+						<!-- ***** NOTIFICATIONS End ***** -->
 			
 			<div id="icons">
 				<!-- ***** CURRENCIES Start ***** -->
@@ -297,7 +296,7 @@ $(document).ready(function($){
 		<!-- ***** Categories Start ***** -->
 				<div id="menu">
 		  <ul>
-						<li><a href="https://web.archive.org/web/20211223030954/http://www.coloneltrading.com/index.php?route=product/manufacturer/product&manufacturer_id=11">Brands</a>
+						<li><a href="http://www.coloneltrading.com/index.php?route=product/manufacturer">Brands</a>
 			  			  <div>
 								<ul>
 				  				  				  				  <li><a href="http://www.coloneltrading.com/index.php?route=product/manufacturer/product&amp;manufacturer_id=11">5.11 Tactical</a></li>
@@ -754,7 +753,7 @@ $('#carousel0 ul').jcarousel({
 </div>
 <!-- ***** Lower Footer Ends Here ***** -->
 <div id="powered">
-	Colonel Trading &copy; 2021.  
+	Colonel Trading &copy; 2018.  
 		
 	</div>
 </div>
