@@ -1,3 +1,23 @@
-RewriteOptions inherit
-ErrorDocument 404/404.html
-RewriteEngineOn
+# Enable the RewriteEngine
+RewriteEngine On
+
+# Set the base directory
+RewriteBase /
+
+# Redirect non-www URLs to www URLs
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [L,R=301]
+
+# Redirect HTTP requests to HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Custom 404 Error Page
+ErrorDocument 404 /404.html
+
+# Custom Server Error Pages
+ErrorDocument 500 /500.html
+ErrorDocument 501 /501.html
+ErrorDocument 502 /502.html
+ErrorDocument 503 /503.html
+ErrorDocument 504 /504.html
