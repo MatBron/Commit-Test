@@ -169,17 +169,25 @@
             <!-- Left Side Ends -->
             <!-- Contact Form Starts -->
             <div class="col-12 col-lg-8">
-                <form class="contactform" method="post" action="">
+                <form class="contactform" action="https://formsubmit.co/2145918e47a4e32a8f2bbb90355ff5da" method="POST" target="_blank">
+                    <!-- Honeypot -->
+                    <input type="text" name="_honey" style="display: none;">
+
+                    <!-- Disable Captcha -->
+                     <input type="hidden" name="_captcha" value="false">
                     <div class="contactform">
                         <div class="row">
                             <div class="col-12 col-md-4">
-                                <input type="text" name="name" placeholder="YOUR NAME">
+                                <input type="text" name="name" id="firstName" placeholder="YOUR NAME">
                             </div>
                             <div class="col-12 col-md-4">
-                                <input type="email" name="email" placeholder="YOUR EMAIL">
+                                <input type="text" name="Last&nbsp;Name" id="lastName" placeholder="YOUR LAST NAME">
                             </div>
                             <div class="col-12 col-md-4">
-                                <input type="text" name="subject" placeholder="YOUR SUBJECT">
+                                <input type="email" name="email" id="emailInfo" placeholder="YOUR EMAIL">
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <input type="text" name="phone" placeholder="YOUR MOBILE">
                             </div>
                             <div class="col-12">
                                 <textarea name="message" placeholder="YOUR MESSAGE"></textarea>
