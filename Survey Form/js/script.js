@@ -3,12 +3,14 @@ const form = document.forms['submit-to-google-sheet']
 
 form.addEventListener('submit', e => {
   e.preventDefault()
-  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => {
-        form.reset()
-        alert('Thank you for taking the time to give us your feedback. ')
-        window.location.href = 'thankyou.html';
+  
+  if (confirm("Do you want to submit your form?")) {
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+            // Show an alert instead of updating the span
+            window.location.href = 'thankyou.html';
+        })
+        .catch(error => console.error('Error!', error.message));
+  } 
 
-    })
-    .catch(error => console.error('Error!', error.message))
-})
+});

@@ -77,6 +77,7 @@ textarea, .form-group input[type="text"], .form-group input[type="number"]{
 
 .form-note{
     text-align: center;
+    color: red;
 }
 
 .img-fluid{

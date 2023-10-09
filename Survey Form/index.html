@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
@@ -8,21 +9,25 @@
     <title>Customer Service Survey</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </head>
+
 <body>
     <div class="survey">
-        <img src="img/Banner.jpg" class="img-fluid" alt="banner">
+        <img src="img/Colonel.png" class="img-fluid" alt="banner">
         <h1 class="form-header">Customer Service Survey</h1>
 
         <!--Registration Section-->
-        <div id="registration-section"> 
-            <p>Greetings from the 5.11 Tactical Series! We are continuously looking for ways in which we can improve our
+        <div id="registration-section">
+            <p>Greetings from <b>Colonel Trading Co!</b> We are continuously looking for ways in which we can improve our
                 products and the services we provide to our valued customers.</p>
             <p>We would appreciate it if you could share your thoughts by answering a few questions as part of our quick
                 survey. </p>
-             
+
             <form name="submit-to-google-sheet" id="registration-form">
                 <div class="form-group">
                     <label for="Name">Full Name<span class="form-req">*</span></label>
@@ -41,7 +46,7 @@
 
                 <div class="d-grid gap-2">
                     <button class="btn btn-primary" id="start-survey-btn" type="button">Start Survey</button>
-                </div>            
+                </div>
         </div>
 
         <!-- End Registration Section-->
@@ -49,92 +54,99 @@
         <!--Start of Survey Section-->
 
         <div id="survey-section" style="display: none;">
-                <div class="form-group">
-                    <label>1. How satisfied are you with your interaction with our sales staff?</label>
-                    <div class="radio-group">
-                        <input type="radio" name="ISS" id="ISS_Dissatisfied" value="Dissatisfied">
-                        <label for="ISS_Dissatisfied">Dissatisfied</label>
-                        <input type="text" name="ISS_Comment" class='txb_iss' hidden="true" placeholder="Enter your comment here" ></input>
-                    </div>
-                    <div class="radio-group">
-                        <input type="radio" name="ISS" id="ISS_Satisfied" value="Satisfied" required>
-                        <label for="ISS_Satisfied">Satisfied</label>
-                    </div>
-                    <div class="radio-group">
-                        <input type="radio" name="ISS" id="ISS_VerySatisfied" value="Very Satisfied" required>
-                        <label for="ISS_VerySatisfied">Very Satisfied</label>
-                    </div>
+            <div class="form-group">
+                <label>1. How satisfied are you with your interaction with our sales staff?</label>
+                <div class="radio-group">
+                    <input type="radio" name="ISS" id="ISS_Dissatisfied" value="Dissatisfied">
+                    <label for="ISS_Dissatisfied">Dissatisfied</label>
+                    <input type="text" name="ISS_Comment" class='txb_iss' hidden="true"
+                        placeholder="Enter your comment here"></input>
                 </div>
+                <div class="radio-group">
+                    <input type="radio" name="ISS" id="ISS_Satisfied" value="Satisfied" required>
+                    <label for="ISS_Satisfied">Satisfied</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="ISS" id="ISS_VerySatisfied" value="Very Satisfied" required>
+                    <label for="ISS_VerySatisfied">Very Satisfied</label>
+                </div>
+            </div>
 
-                <div class="form-group">
-                    <label>2. How easy was it to process and release your items?</label>
-                    <div class="radio-group">
-                        <input type="radio" name="PRI" id="PRI_Dissatisfied" value="Dissatisfied">
-                        <label for="PRI_Dissatisfied">Dissatisfied</label>
-                        <input type="text" name="PRI_Comment" class='txb_pri' hidden="true" placeholder="Enter your comment here" />
-                    </div>
-                    <div class="radio-group">
-                        <input type="radio" name="PRI" id="PRI_Satisfied" value="Satisfied" required>
-                        <label for="PRI_Satisfied">Satisfied</label>
-                    </div>
-                    <div class="radio-group">
-                        <input type="radio" name="PRI" id="PRI_VerySatisfied" value="Very Satisfied" required>
-                        <label for="PRI_VerySatisfied">Very Satisfied</label>
-                    </div>
+            <div class="form-group">
+                <label>2. How easy was it to process and release your items?</label>
+                <div class="radio-group">
+                    <input type="radio" name="PRI" id="PRI_Dissatisfied" value="Dissatisfied">
+                    <label for="PRI_Dissatisfied">Dissatisfied</label>
+                    <input type="text" name="PRI_Comment" class='txb_pri' hidden="true"
+                        placeholder="Enter your comment here" />
                 </div>
+                <div class="radio-group">
+                    <input type="radio" name="PRI" id="PRI_Satisfied" value="Satisfied" required>
+                    <label for="PRI_Satisfied">Satisfied</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="PRI" id="PRI_VerySatisfied" value="Very Satisfied" required>
+                    <label for="PRI_VerySatisfied">Very Satisfied</label>
+                </div>
+            </div>
 
-                <div class="form-group">
-                    <label>3. How was your experience using our product?</label>
-                    <div class="radio-group">
-                        <input type="radio" name="EP" id="EP_Dissatisfied" value="Dissatisfied" required>
-                        <label for="EP_Dissatisfied">Dissatisfied</label>
-                        <input type="text" name="EP_Comment" class='txb_ep' hidden="true" placeholder="Enter your comment here" />
-                    </div>
-                    <div class="radio-group">
-                        <input type="radio" name="EP" id="EP_Satisfied" value="Satisfied" required>
-                        <label for="EP_Satisfied">Satisfied</label>
-                    </div>
-                    <div class="radio-group">
-                        <input type="radio" name="EP" id="EP_VerySatisfied" value="Very Satisfied" required>
-                        <label for="EP_VerySatisfied">Very Satisfied</label>
-                    </div>
+            <div class="form-group">
+                <label>3. How was your experience using our product?</label>
+                <div class="radio-group">
+                    <input type="radio" name="EP" id="EP_Dissatisfied" value="Dissatisfied" required>
+                    <label for="EP_Dissatisfied">Dissatisfied</label>
+                    <input type="text" name="EP_Comment" class='txb_ep' hidden="true"
+                        placeholder="Enter your comment here" />
                 </div>
+                <div class="radio-group">
+                    <input type="radio" name="EP" id="EP_Satisfied" value="Satisfied" required>
+                    <label for="EP_Satisfied">Satisfied</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="EP" id="EP_VerySatisfied" value="Very Satisfied" required>
+                    <label for="EP_VerySatisfied">Very Satisfied</label>
+                </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="CSR">4. Was the customer service representative knowledgeable and helpful?</label>
-                    <div class="radio-group">
-                        <input type="radio" name="CSR" id="CSR_Yes" value="Yes" required>
-                        <label for="CSR_Yes">Yes</label>
-                    </div>
-                    <div class="radio-group">
-                        <input type="radio" name="CSR" id="CSR_No" value="No" required>
-                        <label for="CSR_No">No</label>
-                    </div>
+            <div class="form-group">
+                <label for="CSR">4. Was the customer service representative knowledgeable and helpful?</label>
+                <div class="radio-group">
+                    <input type="radio" name="CSR" id="CSR_Yes" value="Yes" required>
+                    <label for="CSR_Yes">Yes</label>
                 </div>
+                <div class="radio-group">
+                    <input type="radio" name="CSR" id="CSR_No" value="No" required>
+                    <label for="CSR_No">No</label>
+                    <input type="text" name="CSR_Comment" class='txb_csr' hidden="true"
+                        placeholder="Enter your comment here" />
 
-                <div class="form-group">
-                    <label for="CSEO">5. What suggestions do you have for improving our customer service experience overall?
-                    </label>
-                    <textarea name="CSEO" id="CSEO" placeholder="Enter your suggestions here"></textarea>
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <button type="button" id="preview-btn" class="btn btn-secondary btn-sm">Preview</button>
-                    <button type="submit" id="submit-btn" name="submit" class="btn btn-primary btn-sm">Submit</button>
-                    <span class="form-note">Click here to Submit</span>
-                </div>
-                
+            <div class="form-group">
+                <label for="CSEO">5. What suggestions do you have for improving our customer service experience overall?
+                </label>
+                <textarea name="CSEO" id="CSEO" placeholder="Enter your suggestions here"></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="button" id="preview-btn" class="btn btn-secondary btn-sm">Preview</button>
+                <button type="submit" id="submit-btn" name="submit" class="btn btn-primary btn-sm">Submit</button>
+                <span class="form-note">Click here to Submit</span>
+            </div>
+
         </div>
 
         <!--End of Survery Section-->
     </div>
-</form>
+    </form>
 
-<!--Full Servey Section-->
+    <!--Full Servey Section-->
     <script src="js/preview.js"></script> <!--Preview-->
     <script src="js/txtboxhider.js"></script> <!--Dissatisfied Box Hider-->
     <script src="js/regvalidation.js"></script> <!--Survey Section Validation-->
     <script src="js/script.js"></script>
     <script src="js/commentval.js"></script> <!--Comment Required-->
 </body>
+
 </html>
