@@ -11,6 +11,8 @@ form.addEventListener('submit', e => {
             window.location.href = 'thankyou.html';
         })
         .catch(error => console.error('Error!', error.message));
-  } 
-
+      } else {
+        // If the user cancels the subscription, do nothing or provide feedback
+        console.log("Subscription canceled.");
+    }
 });
