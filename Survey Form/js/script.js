@@ -8,11 +8,10 @@ form.addEventListener('submit', e => {
     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
         .then(response => {
             // Show an alert instead of updating the span
+            form.reset();
             window.location.href = 'thankyou.html';
         })
         .catch(error => console.error('Error!', error.message));
-      } else {
-        // If the user cancels the subscription, do nothing or provide feedback
-        console.log("Subscription canceled.");
-    }
+  } 
+
 });
