@@ -26,17 +26,19 @@
             <form name="submit-to-google-sheet" id="registration-form">
                 <div class="form-group">
                     <label for="Name">Full Name<span class="form-req">*</span></label>
-                    <input type="text" name="Name" id="Name" placeholder="Ex. Juan Luna" required>
+                    <input type="text" name="Name" id="Name" placeholder="Ex. Juan Luna" required >
                 </div>
 
                 <div class="form-group">
-                    <label for="Voucher">Voucher Number<span class="form-req">*</span></label>
-                    <input type="number" name="Voucher" id="Voucher" placeholder="Ex. 221004-00002" required>
+                    <label for="Voucher">Release Voucher Number<span class="form-req">*</span></label>
+                    <input type="number" name="Voucher" id="Voucher" placeholder="Enter the last 4 Digit Number" required>
+                    <span class="voucher-error-message"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="Mobile">Mobile Number<span class="form-req">*</span></label>
-                    <input type="number" name="Mobile" id="Mobile" placeholder="Ex. 77255544" required>
+                    <input type="number" name="Mobile" id="Mobile" placeholder="Ex. 77255544" required min="8">
+                    <span class="mobile-error-message"></span>
                 </div>
 
                 <div class="d-grid gap-2">
@@ -132,10 +134,10 @@
 </form>
 
 <!--Full Servey Section-->
-    <script src="js/preview.js"></script> <!--Preview-->
+
     <script src="js/txtboxhider.js"></script> <!--Dissatisfied Box Hider-->
     <script src="js/regvalidation.js"></script> <!--Survey Section Validation-->
     <script src="js/script.js"></script>
-    <script src="js/commentval.js"></script> <!--Comment Required-->
+    <script src="js/test.js"></script> <!--Comment Required-->
 </body>
 </html>

@@ -28,6 +28,7 @@ $(function () {
     $('#EP_VerySatisfied').click(function () {
         $('.txb_ep').attr('hidden', true);
     });
+
     $('#CSR_Yes').click(function () {
         $('.txb_csr').attr('hidden', true);
     });
