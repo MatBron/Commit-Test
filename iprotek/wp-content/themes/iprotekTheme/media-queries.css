@@ -1,0 +1,241 @@
+/* Media Queries */
+
+
+
+@media screen and (max-width: 1280px) {
+.rm-nav li a, .rm-menu-item a {
+	padding: .75em 0.65em;
+}
+ul.social-list {
+	right: 4%;
+}
+.overview-widget .head-line {
+	position: absolute;
+	top: 40px;
+	left: 35%;
+	display: block;
+	width: 30%;
+	height: 2px;
+	background-color: #0084c9;
+	margin-top: 10px;
+}
+}
+@media screen and (max-width:1179px) 
+ {
+.container {
+    width:96%;
+  }
+	 }
+@media screen and (max-width: 1024px) { 
+ .menu ul li a
+ {
+padding: 0 8px;
+	 }
+}
+ @media screen and (max-width: 1000px) {
+.hamburger_sidebar {
+	visibility: visible;
+	opacity: 1;
+}
+.listType1 li {
+	width: 48%;
+}
+}
+ @media screen and (max-width:980px) {
+.overview-widget {
+	min-height: 360px;
+}
+}
+ @media screen and (max-width:800px) {
+.headerLeft, .headerRight {
+	width: 100%;
+	text-align: center;
+}
+ .menu ul li a
+ {
+padding: 0 12px;
+	 }
+.menu ul 
+ {
+	 float:left;
+	 }
+ul.social-list {
+	float: none;
+}
+ul.social-list li {
+	float: inherit;
+	display: inline;
+}
+}
+ @media screen and (max-width:767px) {
+.overview-widget {
+	min-height: inherit;
+}
+.menu {
+	display: none;
+}
+
+#menu-footer-menu{
+
+	display:block;
+}
+
+#menu-left-menu 
+ {
+	 display:block!important;
+	 padding-bottom:10px;
+	 }
+.serveItems li 
+ {
+	 width:23%;
+	 }
+
+
+
+#footer-sidebar1, #footer-sidebar2, #footer-sidebar3{
+
+	padding-bottom:10px;
+
+}
+
+
+}
+
+
+
+ @media screen and (min-width: 600px) and (max-width:640px) {
+.serveItems li p {
+	min-height: 90px!important;
+}
+}
+ @media screen and (max-width: 640px) {
+.socialIcons {
+	display: none;
+}
+.listType1 li {
+	width: 100%;
+}
+}
+ @media screen and (max-width: 600px) {
+.navbar-header {
+	margin-top: 40px;
+}
+.rm-toggle {
+	position: absolute;
+	top: 65px;
+	right: 0px;
+}
+.navbar-default .navbar-nav {
+	margin-top: 0px;
+}
+.rm-container {
+	width: 100%;
+}
+.rm-css-animate.rm-menu {
+	background: #0084c9;
+}
+.navbar-default .navbar-nav > li > a {
+	color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover,  .navbar-default .navbar-nav > li > a:active {
+	color: #fff;
+}
+.slidesjs-pagination {
+	display: none;
+}
+#slides a:link, #slides a:visited {
+	color: #000;
+}
+.navbar-default .navbar-nav {
+	margin-right: 0px !important;
+}
+.aboutPage h4:before,  #whiteBox h4:before {
+	right: 80%;
+	width: 20%;
+}
+.aboutPage h4:after,  #whiteBox h4:after {
+	left: 80%;
+	width: 20%;
+}
+.serveItems li {
+	width: 100%;
+}
+.listType1 li {
+	width: 99%;
+	margin: 10px 1%;
+}
+.aboutPage h5 {
+	line-height: 26px;
+}
+#services {
+	margin-left: 0px;
+}
+.serviceLeft,  .serviceRight {
+	width: 100%;
+	display: block;
+	float: none;
+}
+.solutionBox {
+	width: 100%;
+}
+.solutionSingle {
+	width: 100%;
+	float: none;
+}
+.software h3 {
+	background: none;
+	color: #0084c9;
+	font-weight: 600;
+	padding-left: 0px;
+	padding-top: 0px;
+	min-height: 40px;
+	font-size: 18px;
+	margin: 15px 0px;
+}
+.tracker h3 {
+	background: none;
+	color: #0084c9;
+	font-weight: 600;
+	padding-left: 0px;
+	padding-top: 0px;
+	min-height: 40px;
+	font-size: 18px;
+	margin: 15px 0px;
+}
+.contactAddress {
+	position: relative;
+	width: 100%;
+	right: 0px;
+	z-index: 0;
+}
+}
+ @media (max-width:800px) {
+.contactAddress {
+	width: 40%;
+}
+}
+ @media (max-width:479px) {
+.empPoints li {
+	width: 100%;
+}
+.logo>img {
+	margin: 0 auto;
+	text-align: center;
+}
+ul.social-list {
+	float: none;
+}
+ul.social-list li {
+	float: inherit;
+	display: inline;
+}
+ul.social-list li.socialIcons {
+	display: none;
+}
+}
+ @media (max-width:360px) {
+ul.social-list li a {
+	padding: 0!important;
+	font-size:12px;
+}
+}

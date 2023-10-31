@@ -16,6 +16,11 @@
   }
 }
 
+.iphone{
+  padding-bottom: px;
+  padding-top: 5px;
+}
+
 .icon-square {
   width: 3rem;
   height: 3rem;
@@ -32,4 +37,23 @@
   margin-top: 50px;
   margin-bottom: 0;
   padding: 0;
+  height: 100px;
+  width: 100px;
+}
+
+#features{
+  margin-top: 5px;
+}
+
+#client {
+  margin-top: 50px;
+}
+
+#testimonial {
+  background-color: #F8F9FA;
+}
+
+#footer{
+  padding: 0;
+  height: 310px;
 }
