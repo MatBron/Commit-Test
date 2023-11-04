@@ -1,0 +1,325 @@
+/* press-overview.php - Arabic Settings */
+
+.arabic__lang * {
+	font-family: 'Harmattan', sans-serif;
+	/*font-family: 'Mirza', cursive;*/
+}
+
+.arabic__lang,
+.single-press .arabic__lang {
+	direction: rtl !important;
+}
+
+.press-overview__item__box__title.arabic__lang a {
+	font-family: 'Harmattan', sans-serif;
+	/*font-family: 'Mirza', cursive;*/
+	font-weight: bold;
+	font-size: 24px;
+}
+
+/* single-press.php */
+
+.press-single__back {
+	padding-top: 20px;
+	font-family: stobisans_mediummedium, Calibri, Helvetica, Arial, sans-serif;
+	font-size: 15px;
+}
+
+@media (min-width:768px) {
+	.press-single__back {
+		font-size: 20px;
+		padding-top: 100px;
+	}
+}
+
+.press-single__back svg {
+	width: auto;
+	height: 14px;
+	position: relative;
+	top: 2px;
+	margin-right: 10px;
+}
+
+@media (min-width:768px) {
+	.press-single__back svg {
+		margin-right: 20px;
+		height: 20px;
+		top: 4px;
+	}
+}
+
+.press-single__back a {
+	color: #272727;
+}
+
+.press-single__back a:hover {
+	color: #dc1b21;
+}
+
+.press-single__back--tab {
+	display: none;
+}
+
+@media (min-width:768px) {
+	.press-single__back--tab {
+		display: block;
+	}
+}
+
+@media (min-width:768px) {
+	.press-single__back--mob {
+		display: none;
+	}
+}
+
+.press-single__box {
+	background-color: #fff;
+	padding: 20px;
+	position: relative;
+	z-index: 2;
+	border-top: 20px solid silver;
+	border-left: 20px solid silver;
+}
+
+@media (max-width:767px) {
+	.press-single__box {
+		border-top: 20px solid silver;
+		border-left: 0;
+		padding-top: 40px;
+	}
+}
+
+@media (min-width:768px) {
+	.press-single__box {
+		padding: 60px;
+		top: 60px;
+	}
+}
+
+.press-single__title {
+	color: #272727;
+	margin: 0 0 .67em;
+}
+
+@media (max-width:767px) {
+	.press-single__title {
+		font-size: 30px;
+	}
+}
+
+.press-single__date {
+	font-family: stobisans_boldbold, Calibri, Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	color: #878787;
+	padding-bottom: 10px;
+}
+
+@media (min-width:768px) {
+	.press-single__date {
+		padding-bottom: 20px;
+	}
+}
+
+.press-single__text {
+	font-family: stobisans_regularregular, Calibri, Helvetica, Arial, sans-serif;
+	font-size: 17px;
+	color: #272727;
+}
+
+.press-single__text ol,
+.press-single__text ul {
+	padding: 0 0 0 20px;
+}
+
+.press-single__text ul ul,
+.press-single__text ul ul li,
+.press-single__text ul ol,
+.press-single__text ul ol li,
+.press-single__text ol ol,
+.press-single__text ol ol li,
+.press-single__text ol ul,
+.press-single__text ol ul li {
+	list-style: none;
+	margin-top: 0;
+	padding: 0;
+}
+
+.press-single__text ul {
+	list-style-type: square;
+}
+
+@media (min-width:768px) {
+	.single-press .internal-slider {
+		padding-top: 14px;
+	}
+
+	.single-press .internal-slider__next,
+	.single-press .internal-slider__prev {
+		padding: 15px 0;
+	}
+
+	.internal-slider__next svg,
+	.internal-slider__prev svg {
+		height: 15px;
+	}
+}
+
+@media (min-width:1024px) {
+	.single-press .internal-slider__next,
+	.single-press .internal-slider__prev {
+		padding: 25px 10px;
+	}
+}
+
+.single-press .cmp-main-content__blockquote__inner:after {
+	background-color: #dc1b21;
+	width: .5em;
+}
+
+.single-press .cmp-main-content__blockquote__text {
+	font-family: stobisans_regularregular, Calibri, Helvetica, Arial, sans-serif;
+	font-size: 17px;
+}
+
+@media (min-width:768px) {
+	.single-press .cmp-main-content__blockquote__text {
+		font-size: 21px;
+	}
+}
+
+.single-press .cmp-main-content__blockquote__text p {
+	font-family: stobisans_boldbold, Calibri, Helvetica, Arial, sans-serif;
+	margin: 0;
+}
+
+.single-press .cmp-main-content__blockquote__text p:first-child {
+	margin-bottom: 1em;
+}
+
+.single-press .cmp-main-content__blockquote__caption {
+	font-style: italic;
+}
+
+.single-press .cmp-main-content__blockquote__text a {
+	font-family: stobisans_boldbold, Calibri, Helvetica, Arial, sans-serif;
+	color: #272727;
+	text-decoration: underline;
+}
+
+.single-press .press-single__co-info {
+	border-top: 1px solid silver;
+	margin-top: 3em;
+	padding: 1.5em 0;
+	font-size: 15px;
+	line-height: 1.35em;
+}
+
+.single-press .press-single__co-info h1 {
+	font-size: 15px;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-top: 0;
+}
+
+.single-press .press-single__co-info p:last-child {
+	margin-bottom: 0;
+}
+
+/* single-press.php - Arabic Settings */
+
+.arabic__lang .press-single__title {
+	font-size: 44px;
+	line-height: 1em;
+}
+
+@media (max-width:767px) {
+	.press-single__title {
+		font-size: 34px;
+	}
+}
+
+.arabic__lang .press-single__text .cmp-main-content__default__text,
+.arabic__lang .cmp-main-content__blockquote__text {
+	font-size: 22px;
+}
+
+.arabic__lang strong,
+.arabic__lang .cmp-main-content a {
+	font-weight: bolder !important;
+}
+
+.arabic__lang .press-single__text .single_image__item__caption {
+	text-align: left !important;
+	font-style: normal !important;
+	font-size: 19px;
+}
+
+.arabic__lang .press-single__text ol,
+.arabic__lang .press-single__text ul {
+	padding: 0 22px 0 0;
+}
+
+.arabic__lang .press-single__text ul ul,
+.arabic__lang .press-single__text ul ul li,
+.arabic__lang .press-single__text ul ol,
+.arabic__lang .press-single__text ul ol li,
+.arabic__lang .press-single__text ol ol,
+.arabic__lang .press-single__text ol ol li,
+.arabic__lang .press-single__text ol ul,
+.arabic__lang .press-single__text ol ul li {
+	list-style: none;
+	margin-top: 0;
+	padding: 0;
+}
+
+.arabic__lang .cmp-main-content__blockquote__inner:after{
+	left: 100%;
+}
+
+@media (min-width:768px) {
+	.arabic__lang .cmp-main-content__blockquote__inner {
+		padding: 0 30px;
+		margin-right: 0.5em;
+	}
+}
+
+@media (max-width:767px) {
+	.arabic__lang .cmp-main-content__blockquote__inner {
+		margin-right: 25px;
+	}
+}
+
+.arabic__lang .cmp-main-content__blockquote__text .not__arabic__ltr {
+	direction: ltr !important;
+	text-align: right;
+}
+
+.arabic__lang .cmp-main-content__blockquote__text a,
+.arabic__lang .cmp-main-content__default__text a {
+	font-family: 'Harmattan', sans-serif;
+	/*font-family: 'Mirza', cursive;*/
+	font-weight: bold;
+}
+
+.arabic__lang .cmp-main-content__blockquote__text a:hover {
+	color: #dc1b21;
+}
+
+.single-press .press-single__co-info.arabic__lang {
+	font-style: normal;
+	font-size: 17px;
+}
+
+.single-press .press-single__co-info.arabic__lang h1 {
+	font-weight: bolder !important;
+	font-size: 19px;
+}
+
+.arabic__lang .share__not__arabic__ltr {
+	direction: ltr !important;
+}
+
+.arabic__lang .share__not__arabic__ltr a {
+	font-family: stobisans_boldbold, Calibri, Helvetica, Arial, sans-serif !important;
+	font-size: 13px;
+}
