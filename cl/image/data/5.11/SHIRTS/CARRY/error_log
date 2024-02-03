@@ -1,0 +1,1 @@
+[28-Jan-2023 20:41:21 America/Boise] PHP Warning:  file_get_contents(/tmp/index.php): Failed to open stream: No such file or directory in /home4/colonelt/public_html/l.php on line 2
