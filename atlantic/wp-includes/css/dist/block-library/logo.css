@@ -1,0 +1,21 @@
+#logo-image {
+    width:120px; 
+    height:100px;
+    position: relative;
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+    #logo-image {
+        width: 100px;
+        height: 80px;
+    }
+}
+
+/* Media query for screens smaller than 576px */
+@media (max-width: 576px) {
+    #logo-image {
+        width: 80px;
+        height: 60px;
+    }
+}
