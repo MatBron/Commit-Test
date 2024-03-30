@@ -355,7 +355,7 @@ label {
 #icons #language {
 	position: relative;
 	display: inline-block;
-	float:right;
+	float: right;
 	margin-right: 20px;
 	min-width: 25px;
 	color: #999;
@@ -368,7 +368,7 @@ label {
 #icons #currency {
 	min-width: 25px;
 	display: inline-block;
-	float:right;
+	float: right;
 	position: relative;
 	color: #999;
 	line-height: 24px;
@@ -1086,7 +1086,7 @@ a.button:hover, input.button:hover {
 	text-align: center;
 	-moz-box-shadow:inset 0px 1px 0px 0px #eee;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #eee;
-	box-shadow:inset 0px 1px 0px 0px #ee;
+	box-shadow:inset 0px 1px 0px 0px #eee;
 	background-color:#f1f1f1;
 	border-top:1px solid #ddd;
 	border-left:1px solid #ddd;
