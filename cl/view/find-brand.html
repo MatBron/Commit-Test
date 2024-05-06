@@ -3,18 +3,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en" xml:lang="en">
 
 <head>
-  <title>Colonel Trading - Find Your Favorite Brand</title>
+  <title>Colonel Trading - Find Brand</title>
   <base href="../index.html" />
   <link href="../image/data/ColonelFavicon31.png" rel="icon" />
   <link rel="stylesheet" type="text/css" href="../catalog/view/theme/eCart/stylesheet/stylesheet.css" />
-  <link rel="stylesheet" type="text/css" href="../css/find-product.css" /> <!--Find Product-->
-  <link rel="stylesheet" type="text/css" href="../css/treeview.css" /> <!--Tree View-->
   <link rel="stylesheet" type="text/css" href="../catalog/view/theme/eCart/stylesheet/jquery.tweet.css" media="all" />
   <link rel="stylesheet" type="text/css" href="../catalog/view/theme/eCart/stylesheet/jquery.miniColors.css"
     media="all" />
   <link rel="stylesheet" type="text/css" href="../catalog/view/theme/eCart/stylesheet/ocxautosuggest_search.css"
     media="screen" />
   <script type="text/javascript" src="../catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/find-product.css" /> <!--Find Product-->
   <script type="text/javascript" src="../catalog/view/javascript/jquery/ui/jquery-ui-1.8.16.custom.min.js"></script>
   <link rel="stylesheet" type="text/css"
     href="../catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" />
@@ -35,9 +34,10 @@
   <script type="text/javascript" src="../catalog/view/javascript/jquery/jquery.ocxautosuggest_search.js"></script>
   <script type="text/javascript" src="../catalog/view/javascript/jquery/jquery.typewatch.js"></script>
   <script type="text/javascript" src="../catalog/view/javascript/jquery/jquery.highlight.js"></script>
-	<script type="text/javascript" src="../js/autosearch.js"></script>
-	<!-- ***** Auto Search ***** -->
-	<script type="text/javascript" src="../js/contentAdsoptions.js"></script>
+  <script type="text/javascript" src="../js/autosearch.js"></script>
+  <!-- ***** Auto Search ***** -->
+  <script type="text/javascript" src="../js/contentAdsoptions.js"></script>
+
 </head>
 
 <body>
@@ -63,13 +63,14 @@
             <li><a href="../index.html">Home</a></li>
           </ul>
           <ul>
-            <li><a href="./find-brand.html">Brand</a></li>
+            <li><a href="../view/find-brand.html">Brand</a></li>
           </ul>
         </div>
 
         <h2>Find Brand</h2>
 
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Brands.." title="Type in a search">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Brands.."
+          title="Type in a search">
 
         <ul id="myUL">
           <li><a href="../product/511-tactical-pg1.html">5.11 Tactical</a></li>
@@ -83,36 +84,127 @@
           <li><a href="../product/zebra-pg1.html">ZEBRA-ARMOUR</a></li>
         </ul>
 
-        <div id="footer"></div>
       </div>
+      
+      <script type="text/javascript">
+        function display(view) {
+          if (view == 'list') {
+            $('.product-grid').attr('class', 'product-list');
+
+            $('.product-list .ecart-list > div').each(function (index, element) {
+              html = '<div class="right">';
+
+              var price = $(element).find('.price').html();
+
+              if (price != null) {
+                html += '<div class="price">' + price + '</div>';
+              }
+
+              html += '  <div class="cart">' + $(element).find('.cart').html() + '</div>';
+              html += '  <div class="wishlist">' + $(element).find('.wishlist').html() + '</div>';
+              html += '  <div class="compare">' + $(element).find('.compare').html() + '</div>';
+              html += '</div>';
+
+              html += '<div class="left">';
+
+              var image = $(element).find('.image').html();
+
+              if (image != null) {
+                html += '<div class="image">' + image + '</div>';
+              }
+
+              html += '  <div class="name">' + $(element).find('.name').html() + '</div>';
+              html += '  <div class="description">' + $(element).find('.description').html() + '</div>';
+
+              var rating = $(element).find('.rating').html();
+
+              if (rating != null) {
+                html += '<div class="rating">' + rating + '</div>';
+              }
+
+              html += '</div>';
+
+              $(element).html(html);
+            });
+
+            $('.display').html('&nbsp;&nbsp;<a onclick="display(\'grid\');"><img src="catalog/view/theme/eCart/image/product-grid.png"></a>&nbsp;<img src="catalog/view/theme/eCart/image/product-list-active.png">');
+
+            $.cookie('display', 'list');
+          } else {
+            $('.product-list').attr('class', 'product-grid');
+
+            $('.product-grid .ecart-list > div').each(function (index, element) {
+              html = '';
+
+              var image = $(element).find('.image').html();
+
+              if (image != null) {
+                html += '<div class="image">' + image + '</div>';
+              }
+
+              html += '<div class="name">' + $(element).find('.name').html() + '</div>';
+              html += '<div class="description">' + $(element).find('.description').html() + '</div>';
+
+              var price = $(element).find('.price').html();
+
+              if (price != null) {
+                html += '<div class="price">' + price + '</div>';
+              }
+
+              var rating = $(element).find('.rating').html();
+
+              if (rating != null) {
+                html += '<div class="rating">' + rating + '</div>';
+              }
+
+              html += '<div class="cart">' + $(element).find('.cart').html() + '</div>';
+              html += '<div class="wishlist">' + $(element).find('.wishlist').html() + '</div>';
+              html += '<div class="compare">' + $(element).find('.compare').html() + '</div>';
+
+              $(element).html(html);
+            });
+
+            $('.display').html('&nbsp;&nbsp;<img src="catalog/view/theme/eCart/image/product-grid-active.png">&nbsp;<a onclick="display(\'list\');"><img src="catalog/view/theme/eCart/image/product-list.png"></a>');
+
+            $.cookie('display', 'grid');
+          }
+        }
+
+        view = $.cookie('display');
+
+        if (view) {
+          display(view);
+        } else {
+          display('list');
+        }
+      </script>
+
+      <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+      <div class="elfsight-app-56121f74-8e81-435e-9f8b-168c8ce1a45a" data-elfsight-app-lazy></div>
+      <!--Start of Tawk.to Script-->
+      <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+          var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+          s1.async = true;
+          s1.src = 'https://embed.tawk.to/66068318a0c6737bd1262e7d/1hq4n06d1';
+          s1.charset = 'UTF-8';
+          s1.setAttribute('crossorigin', '*');
+          s0.parentNode.insertBefore(s1, s0);
+        })();
+      </script>
+      <!--End of Tawk.to Script-->
+
+
+      <div id="footer"></div>
     </div>
-    <script type="text/javascript">
-      $("#tabs a").tabs();
-    </script> <!--Tabs-->
+  </div>
 
-    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-    <div class="elfsight-app-56121f74-8e81-435e-9f8b-168c8ce1a45a" data-elfsight-app-lazy></div>
-    <!--Social Share-->
-
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-      var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-      (function () {
-        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-        s1.async = true;
-        s1.src = 'https://embed.tawk.to/66068318a0c6737bd1262e7d/1hq4n06d1';
-        s1.charset = 'UTF-8';
-        s1.setAttribute('crossorigin', '*');
-        s0.parentNode.insertBefore(s1, s0);
-      })();
-    </script>
-    <!--End of Tawk.to Script-->
-    <script src="../js/header.js" type="text/javascript"></script> <!-- ***** Headeer ***** -->
-    <script src="../js/footer.js" type="text/javascript"></script> <!-- ***** Footer ***** -->
-    <script src="../js/left-pages.js" type="text/javascript"></script> <!-- ***** Left Side ***** -->
-    <script src="../js/right-pages.js" type="text/javascript"></script> <!-- ***** Right Side ***** -->
-    <script src="../js/find-product.js" type="text/javascript"></script> <!-- ***** Find-Product ***** -->
-    <script src="../js/treeview.js" type="text/javascript"></script> <!-- ***** Tree View ***** -->
+  <script src="../js/header.js" type="text/javascript"></script> <!-- ***** Headeer ***** -->
+  <script src="../js/footer.js" type="text/javascript"></script> <!-- ***** Footer ***** -->
+  <script src="../js/left-pages.js" type="text/javascript"></script> <!-- ***** Left Side ***** -->
+  <script src="../js/right-pages.js" type="text/javascript"></script> <!-- ***** Right Side ***** -->
+  <script src="../js/find-product.js" type="text/javascript"></script> <!-- ***** Find-Product ***** -->
 </body>
 
 </html>
