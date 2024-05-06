@@ -81,6 +81,11 @@ for (let i of products.data) {
   name.classList.add("product-name");
   name.innerText = i.productName.toUpperCase();
   container.appendChild(name);
+  let anchor = document.createElement("a");
+  anchor.setAttribute("href", i.href); // Set the href attribute to the product's href
+  anchor.innerText = i.productName.toUpperCase();
+  name.appendChild(anchor);
+  container.appendChild(name);
   //price
   let price = document.createElement("h6");
   price.innerText = "$" + i.price;
