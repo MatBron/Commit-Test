@@ -77,14 +77,10 @@ for (let i of products.data) {
   let container = document.createElement("div");
   container.classList.add("container");
   //product name
-  let name = document.createElement("h5");
+  let name = document.createElement("a"); // Change to anchor tag
   name.classList.add("product-name");
+  name.setAttribute("href", i.href); // Set the href attribute to the product's href
   name.innerText = i.productName.toUpperCase();
-  container.appendChild(name);
-  let anchor = document.createElement("a");
-  anchor.setAttribute("href", i.href); // Set the href attribute to the product's href
-  anchor.innerText = i.productName.toUpperCase();
-  name.appendChild(anchor);
   container.appendChild(name);
   //price
   let price = document.createElement("h6");
@@ -94,8 +90,6 @@ for (let i of products.data) {
   card.appendChild(container);
   document.getElementById("products").appendChild(card);
 }
-
-
 
 //parameter passed from button (Parameter same as category)
 function filterProduct(value) {
@@ -150,7 +144,7 @@ document.getElementById("search").addEventListener("click", () => {
   });
 });
 
-  //Initially display all products
-  window.onload = () => {
-    filterProduct("all");
-  };
+//Initially display all products
+window.onload = () => {
+  filterProduct("all");
+};
