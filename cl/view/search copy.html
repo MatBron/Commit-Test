@@ -3,12 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en" xml:lang="en">
 
 <head>
-	<title>Colonel Trading | Contact Us</title>
+	<title>Colonel Trading | Search</title>
 	<base href="#" />
 	<meta name="description"
 		content="The company have been established in 2008. We are importers, working with the local security offices offering them what is new in the market. " />
 	<link rel="icon" href="../image/icon/Colonel.png" type="image/png">
 	<link rel="stylesheet" type="text/css" href="../catalog/view/theme/eCart/stylesheet/stylesheet.css" />
+	<link rel="stylesheet" type="text/css" href="../css/search-filter.css" /> <!--Product Search-->
 	<link rel="stylesheet" type="text/css" href="../catalog/view/theme/eCart/stylesheet/jquery.tweet.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="../catalog/view/theme/eCart/stylesheet/jquery.miniColors.css"
 		media="all" />
@@ -54,56 +55,178 @@
 	<div id="content-wrapper">
 		<div class="container-wrapper">
 			<div id="notification"></div>
+			<!-- FULL HEADER WIDTH ENDS HERE -->
 
 			<div id="content">
 				<div id="popupAutoSuggest">
 					<a id="popupAutoSuggestClose"></a>
 					<div id="popupAutoSuggestContent"></div>
 				</div>
-
 				<div class="breadcrumb">
 					<ul>
 						<li><a href="../index.html">Home</a></li>
 					</ul>
 					<ul>
-						<li><a href="./register.html">Account</a></li>
-					</ul>
-					<ul>
-						<li><a href="./login.html">Login</a></li>
+						<li><a href="./search.html">Search</a></li>
 					</ul>
 				</div>
-				<h1>Contact Us</h1>
-				<form action="#" method="post" enctype="multipart/form-data">
-					<h2>Our Location</h2>
-					<div class="contact-info">
-						<div class="content">
-							<div class="left"><b>Address:</b><br />
-								Colonel Trading<br />
-								Ethad Street – Al Gharafa<br />
-								Ethad Management Complex – Office No.120<br />
-								Colonel Showroom: (+974) 44182267<br />
-								5.11 Showroom: (+974) 44117978<br />
-								Mobile: (+974) 66658811<br />
-								P.O.Box: 55510<br />
-								Email: info@coloneltrading.com</div>
-							<div class="right">
-								<b>Telephone:</b><br />
-								(+974) 448 702 60<br />
-								<br />
-								<b>Fax:</b><br />
-								(+974) 441 184 33
-							</div>
+				<div class="content">
+					<div class="search-wrapper">
+						<div id="search-container">
+							<input type="search" id="search-input" placeholder="Search product name here.." />
+							<button id="search">Search</button>
 						</div>
+						<div id="buttons">
+							<button class="filter-button-value" onclick="filterProduct('all')">All</button>
+							<button class="filter-button-value" onclick="filterProduct('Topwear')">
+								Topwear
+							</button>
+							<button class="filter-button-value" onclick="filterProduct('Bottomwear')">
+								Bottomwear
+							</button>
+							<button class="filter-button-value" onclick="filterProduct('Jacket')">
+								Jacket
+							</button>
+							<button class="filter-button-value" onclick="filterProduct('Watch')">
+								Watch
+							</button>
+						</div>
+						<div id="products"></div>
 					</div>
-					<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-					<div class="elfsight-app-f9e28672-7e81-49ff-8898-82356a9c4784" data-elfsight-app-lazy></div>
-				</form>
+				</div>
 			</div>
+			<script type="text/javascript">
+				$('#content input[name=\'filter_name\']').keydown(function (e) {
+					if (e.keyCode == 13) {
+						$('#button-search').trigger('click');
+					}
+				});
+
+				$('#button-search').bind('click', function () {
+					url = 'index.php?route=product/search';
+
+					var filter_name = $('#content input[name=\'filter_name\']').attr('value');
+
+					if (filter_name) {
+						url += '&filter_name=' + encodeURIComponent(filter_name);
+					}
+
+					var filter_category_id = $('#content select[name=\'filter_category_id\']').attr('value');
+
+					if (filter_category_id > 0) {
+						url += '&filter_category_id=' + encodeURIComponent(filter_category_id);
+					}
+
+					var filter_sub_category = $('#content input[name=\'filter_sub_category\']:checked').attr('value');
+
+					if (filter_sub_category) {
+						url += '&filter_sub_category=true';
+					}
+
+					var filter_description = $('#content input[name=\'filter_description\']:checked').attr('value');
+
+					if (filter_description) {
+						url += '&filter_description=true';
+					}
+
+					location = url;
+				});
+
+				function display(view) {
+					if (view == 'list') {
+						$('.product-grid').attr('class', 'product-list');
+
+						$('.product-list > div').each(function (index, element) {
+							html = '<div class="right">';
+							html += '  <div class="cart">' + $(element).find('.cart').html() + '</div>';
+							html += '  <div class="wishlist">' + $(element).find('.wishlist').html() + '</div>';
+							html += '  <div class="compare">' + $(element).find('.compare').html() + '</div>';
+							html += '</div>';
+
+							html += '<div class="left">';
+
+							var image = $(element).find('.image').html();
+
+							if (image != null) {
+								html += '<div class="image">' + image + '</div>';
+							}
+
+							var price = $(element).find('.price').html();
+
+							if (price != null) {
+								html += '<div class="price">' + price + '</div>';
+							}
+
+							html += '  <div class="name">' + $(element).find('.name').html() + '</div>';
+							html += '  <div class="description">' + $(element).find('.description').html() + '</div>';
+
+							var rating = $(element).find('.rating').html();
+
+							if (rating != null) {
+								html += '<div class="rating">' + rating + '</div>';
+							}
+
+							html += '</div>';
+
+
+							$(element).html(html);
+						});
+
+						$('.display').html('<b>Display:</b> List <b>/</b> <a onclick="display(\'grid\');">Grid</a>');
+
+						$.cookie('display', 'list');
+					} else {
+						$('.product-list').attr('class', 'product-grid');
+
+						$('.product-grid > div').each(function (index, element) {
+							html = '';
+
+							var image = $(element).find('.image').html();
+
+							if (image != null) {
+								html += '<div class="image">' + image + '</div>';
+							}
+
+							html += '<div class="name">' + $(element).find('.name').html() + '</div>';
+							html += '<div class="description">' + $(element).find('.description').html() + '</div>';
+
+							var price = $(element).find('.price').html();
+
+							if (price != null) {
+								html += '<div class="price">' + price + '</div>';
+							}
+
+							var rating = $(element).find('.rating').html();
+
+							if (rating != null) {
+								html += '<div class="rating">' + rating + '</div>';
+							}
+
+							html += '<div class="cart">' + $(element).find('.cart').html() + '</div>';
+							html += '<div class="wishlist">' + $(element).find('.wishlist').html() + '</div>';
+							html += '<div class="compare">' + $(element).find('.compare').html() + '</div>';
+
+							$(element).html(html);
+						});
+
+						$('.display').html('<b>Display:</b> <a onclick="display(\'list\');">List</a> <b>/</b> Grid');
+
+						$.cookie('display', 'grid');
+					}
+				}
+
+				view = $.cookie('display');
+
+				if (view) {
+					display(view);
+				} else {
+					display('list');
+				}
+			</script>
 
 			<div id="footer"></div>
 		</div>
 	</div>
-
 	<script type="text/javascript">
 		$("#tabs a").tabs();
 	</script> <!--Tabs-->
@@ -127,7 +250,7 @@
 	<!--End of Tawk.to Script-->
 	<script src="../js/header.js" type="text/javascript"></script> <!-- ***** Headeer ***** -->
 	<script src="../js/footer.js" type="text/javascript"></script> <!-- ***** Footer ***** -->
-
+	<script src="../js/search-filter.js" type="text/javascript"></script> <!-- ***** Product-search ***** -->
 </body>
 
 </html>
