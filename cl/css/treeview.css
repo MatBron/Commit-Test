@@ -1,8 +1,8 @@
-ul, #myUL {
+ul, #myTL {
 	list-style-type: none;
   }
   
-  #myUL {
+  #myTL {
 	margin: 0;
 	padding: 0;
   }
