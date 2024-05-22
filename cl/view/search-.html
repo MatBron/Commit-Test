@@ -62,6 +62,53 @@
 					<a id="popupAutoSuggestClose"></a>
 					<div id="popupAutoSuggestContent"></div>
 				</div>
+
+				<script type="text/javascript">
+					function OCXAutosuggestSearch() {
+						var current_obj = $('#search input[name=\'filter_name\']');
+
+						$.ajax({
+							url: 'index.php?route=module/autosuggest_search/search',
+							data: 'filter_name=' + encodeURIComponent($(current_obj).val()),
+							success: function (data) {
+								$('#popupAutoSuggestContent').html(data);
+
+								customSetLocationAutoSPopup(current_obj);
+
+								if (autoSPopupStatus == 0) {
+									loadAutoSPopup();
+								}
+							}
+						});
+					}
+
+					$(document).ready(function () {
+						$('#search input[name=\'filter_name\']').typeWatch({
+							callback: OCXAutosuggestSearch,
+							wait: 750,
+							highlight: false,
+							captureLength: 1
+						})
+
+						$('#search input[name=\'filter_name\']').bind('keyup', function () {
+							if (($(this).val().length < 1) && autoSPopupStatus) {
+								disableAutoSPopup();
+							}
+						});
+
+						$("#popupAutoSuggestClose").click(function () {
+							disableAutoSPopup();
+						});
+
+						//Press Escape event!
+						$(document).keypress(function (e) {
+							if (e.keyCode == 27 && autoSPopupStatus == 1) {
+								disableAutoSPopup();
+							}
+						});
+
+					});
+				</script>
 				<div class="breadcrumb">
 					<ul>
 						<li><a href="../index.html">Home</a></li>
@@ -70,6 +117,8 @@
 						<li><a href="./search.html">Search</a></li>
 					</ul>
 				</div>
+				<h1>Search</h1>
+				<b>Search Criteria</b>
 				<div class="content">
 					<div class="search-wrapper">
 						<div id="search-container">
@@ -78,151 +127,39 @@
 						</div>
 						<div id="buttons">
 							<button class="filter-button-value" onclick="filterProduct('all')">All</button>
-							<button class="filter-button-value" onclick="filterProduct('Topwear')">
-								Topwear
-							</button>
-							<button class="filter-button-value" onclick="filterProduct('Bottomwear')">
-								Bottomwear
+							<button class="filter-button-value" onclick="filterProduct('Boots')">
+								Boots
 							</button>
 							<button class="filter-button-value" onclick="filterProduct('Jacket')">
 								Jacket
 							</button>
-							<button class="filter-button-value" onclick="filterProduct('Watch')">
-								Watch
+							<button class="filter-button-value" onclick="filterProduct('Pants')">
+								Pants
+							</button>
+							<button class="filter-button-value" onclick="filterProduct('Shirt')">
+								Shirt
+							</button>
+							<button class="filter-button-value" onclick="filterProduct('Short')">
+								Short
+							</button>
+							<button class="filter-button-value" onclick="filterProduct('Badge')">
+								Badge
+							</button>
+							<button class="filter-button-value" onclick="filterProduct('Electronics')">
+								Electronics
+							</button>
+							<button class="filter-button-value" onclick="filterProduct('Socks')">
+								Socks
+							</button>
+							<button class="filter-button-value" onclick="filterProduct('Bag')">
+								Bag
 							</button>
 						</div>
 						<div id="products"></div>
 					</div>
 				</div>
 			</div>
-			<script type="text/javascript">
-				$('#content input[name=\'filter_name\']').keydown(function (e) {
-					if (e.keyCode == 13) {
-						$('#button-search').trigger('click');
-					}
-				});
 
-				$('#button-search').bind('click', function () {
-					url = 'index.php?route=product/search';
-
-					var filter_name = $('#content input[name=\'filter_name\']').attr('value');
-
-					if (filter_name) {
-						url += '&filter_name=' + encodeURIComponent(filter_name);
-					}
-
-					var filter_category_id = $('#content select[name=\'filter_category_id\']').attr('value');
-
-					if (filter_category_id > 0) {
-						url += '&filter_category_id=' + encodeURIComponent(filter_category_id);
-					}
-
-					var filter_sub_category = $('#content input[name=\'filter_sub_category\']:checked').attr('value');
-
-					if (filter_sub_category) {
-						url += '&filter_sub_category=true';
-					}
-
-					var filter_description = $('#content input[name=\'filter_description\']:checked').attr('value');
-
-					if (filter_description) {
-						url += '&filter_description=true';
-					}
-
-					location = url;
-				});
-
-				function display(view) {
-					if (view == 'list') {
-						$('.product-grid').attr('class', 'product-list');
-
-						$('.product-list > div').each(function (index, element) {
-							html = '<div class="right">';
-							html += '  <div class="cart">' + $(element).find('.cart').html() + '</div>';
-							html += '  <div class="wishlist">' + $(element).find('.wishlist').html() + '</div>';
-							html += '  <div class="compare">' + $(element).find('.compare').html() + '</div>';
-							html += '</div>';
-
-							html += '<div class="left">';
-
-							var image = $(element).find('.image').html();
-
-							if (image != null) {
-								html += '<div class="image">' + image + '</div>';
-							}
-
-							var price = $(element).find('.price').html();
-
-							if (price != null) {
-								html += '<div class="price">' + price + '</div>';
-							}
-
-							html += '  <div class="name">' + $(element).find('.name').html() + '</div>';
-							html += '  <div class="description">' + $(element).find('.description').html() + '</div>';
-
-							var rating = $(element).find('.rating').html();
-
-							if (rating != null) {
-								html += '<div class="rating">' + rating + '</div>';
-							}
-
-							html += '</div>';
-
-
-							$(element).html(html);
-						});
-
-						$('.display').html('<b>Display:</b> List <b>/</b> <a onclick="display(\'grid\');">Grid</a>');
-
-						$.cookie('display', 'list');
-					} else {
-						$('.product-list').attr('class', 'product-grid');
-
-						$('.product-grid > div').each(function (index, element) {
-							html = '';
-
-							var image = $(element).find('.image').html();
-
-							if (image != null) {
-								html += '<div class="image">' + image + '</div>';
-							}
-
-							html += '<div class="name">' + $(element).find('.name').html() + '</div>';
-							html += '<div class="description">' + $(element).find('.description').html() + '</div>';
-
-							var price = $(element).find('.price').html();
-
-							if (price != null) {
-								html += '<div class="price">' + price + '</div>';
-							}
-
-							var rating = $(element).find('.rating').html();
-
-							if (rating != null) {
-								html += '<div class="rating">' + rating + '</div>';
-							}
-
-							html += '<div class="cart">' + $(element).find('.cart').html() + '</div>';
-							html += '<div class="wishlist">' + $(element).find('.wishlist').html() + '</div>';
-							html += '<div class="compare">' + $(element).find('.compare').html() + '</div>';
-
-							$(element).html(html);
-						});
-
-						$('.display').html('<b>Display:</b> <a onclick="display(\'list\');">List</a> <b>/</b> Grid');
-
-						$.cookie('display', 'grid');
-					}
-				}
-
-				view = $.cookie('display');
-
-				if (view) {
-					display(view);
-				} else {
-					display('list');
-				}
-			</script>
 
 			<div id="footer"></div>
 		</div>

@@ -4,8 +4,8 @@
   box-sizing: border-box;
   border: none;
   outline: none;
-  font-family: "Poppins", sans-serif;
 }
+
 body {
   background-color: #f5f8ff;
 }
@@ -19,96 +19,130 @@ body {
 #search-container {
   margin: 1em 0;
 }
+
 #search-container input {
   background-color: transparent;
   width: 40%;
   border-bottom: 2px solid #110f29;
   padding: 1em 0.3em;
 }
+
 #search-container input:focus {
-  border-bottom-color: #6759ff;
+  border-bottom-color: #d10000;
+  color: #888888;
 }
+
 #search-container button {
-  padding: 1em 2em;
+  padding: 0.7em 2em;
+  /* Adjust padding to make the button smaller */
   margin-left: 1em;
-  background-color: #6759ff;
+  background-color: #d10000;
   color: #fff;
   border-radius: 5px;
   margin-top: 0.5em;
+  font-size: 1em;
+  /* Adjust font size */
 }
+
 .filter-button-value {
-  border: 1px solid #6759ff;
+  border: 1px solid #d10000;
   padding: 5px;
-  border-radius: 3em;
-  background-color: transparent;
-  color: #6759ff;
+
+  background-color: #d10000;
+  color: white;
   cursor: pointer;
-  font-size: 6px;
+  font-size: 7px;
+  border-radius: 5px;
 }
+
 .active {
-  background-color: #6759ff;
-  color: #fff;
+  background-color: #fff;
+  color: black;
+
 }
+
 #products {
   display: grid;
-  grid-template-columns: repeat(10, 1fr); /* Display  in each column */
-  grid-column-gap: 1px; /* Add gap between columns */
-  grid-row-gap: 1em; /* Add gap between rows */
+  grid-template-columns: repeat(6, 1fr);
+  /* Display  in each column */
+  grid-column-gap: .1em;
+  /* Add gap between columns */
+  grid-row-gap: 1.5em;
+  /* Add gap between rows */
   padding: 1px 0;
-  margin: 0 auto; /* Align center */
+  margin: 0 auto;
+  /* Align center */
+  text-align: center;
 }
+
 .card {
-  display: grid; /* Change to grid layout */
-  grid-template-rows: auto 1fr auto; /* Three rows: image, product name, price */
+  display: grid;
+  /* Change to grid layout */
+  grid-template-rows: auto 1fr auto;
+  /* Three rows: image, product name, price */
   background-color: #fff;
-  width: 78px; /* Set width to 78px */
-  height: 100px; /* Set height to 78px */
+  width: 155px;
+  /* Set width to 78px */
+  height: 200px;
+  /* Set height to 78px */
   margin-top: .5em;
   padding: 1px;
   border-radius: 5px;
 }
+
 .image-container {
   text-align: center;
-  grid-row: 1; /* Align image to the first row */
+  grid-row: 1;
+  /* Align image to the first row */
 }
+
 .product-image {
   max-width: 100%;
   object-fit: contain;
-  height: 78px;
-  width: 78px; /* Set height to 78px */
+  height: 150px;
+  width: 150px;
+  /* Set height to 78px */
   margin-bottom: 0;
 }
+
 .container {
-  padding-top: 2px; /* Update the padding to move the product name closer to the image */
+  padding-top: 1px;
+  /* Update the padding to move the product name closer to the image */
   color: #110f29;
-  grid-row: 2; /* Align product name to the second row */
+  grid-row: 2;
+  /* Align product name to the second row */
 }
 
 .container a {
   font-weight: 300;
   margin-top: 0;
   text-align: center;
-  font-size: 6px;
+  font-size: 9px;
 }
+
 .container h6 {
   font-weight: 300;
   margin-top: 0;
   text-align: center;
-  font-size: 6px;
+  font-size: 9px;
 }
+
 .hide {
   display: none;
 }
+
 @media screen and (max-width: 720px) {
   .product-image {
     max-width: 100%;
     object-fit: contain;
     height: 10em;
   }
+
   .card {
     max-width: 10em;
     margin-top: 1em;
   }
+
   #products {
     grid-template-columns: auto auto;
     grid-column-gap: 1em;
