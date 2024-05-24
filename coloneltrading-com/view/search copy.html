@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en" xml:lang="en">
+
+<head>
+	<title>Colonel Trading | Search</title>
+	<base href="#" />
+	<meta name="description"
+		content="The company have been established in 2008. We are importers, working with the local security offices offering them what is new in the market. " />
+	<link rel="icon" href="../image/icon/Colonel.png" type="image/png">
+	<link rel="stylesheet" type="text/css" href="../catalog/view/theme/eCart/stylesheet/stylesheet.css" />
+	<link rel="stylesheet" type="text/css" href="../css/search-filter.css" /> <!--Product Search-->
+	<link rel="stylesheet" type="text/css" href="../catalog/view/theme/eCart/stylesheet/jquery.tweet.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="../catalog/view/theme/eCart/stylesheet/jquery.miniColors.css"
+		media="all" />
+	<link rel="stylesheet" type="text/css" href="../catalog/view/theme/eCart/stylesheet/ocxautosuggest_search.css"
+		media="screen" />
+	<link rel="stylesheet" type="text/css" href="../catalog/view/theme/eCart/stylesheet/slideshow.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="../catalog/view/theme/eCart/stylesheet/carousel.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="../catalog/view/theme/eCart/stylesheet/carousel.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="../css/style.css" />
+	<script type="text/javascript" src="../catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="../catalog/view/javascript/jquery/ui/jquery-ui-1.8.16.custom.min.js"></script>
+	<link rel="stylesheet" type="text/css"
+		href="../catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" />
+	<script type="text/javascript" src="../catalog/view/javascript/jquery/ui/external/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../catalog/view/javascript/jquery/colorbox/jquery.colorbox.js"></script>
+	<link rel="stylesheet" type="text/css" href="../catalog/view/javascript/jquery/colorbox/colorbox.css"
+		media="screen" />
+	<script type="text/javascript" src="../catalog/view/theme/eCart/js/jquery.tweet.js"></script>
+	<script type="text/javascript" src="../catalog/view/javascript/jquery/tabs.js"></script>
+	<script type="text/javascript" src="../catalog/view/theme/eCart/js/common_ecart.js"></script>
+	<script type="text/javascript" src="../catalog/view/theme/eCart/js/scripts.js"></script>
+	<script type="text/javascript" src="../catalog/view/theme/eCart/js/jquery.miniColors.js"></script>
+	<script type="text/javascript" src="../catalog/view/theme/eCart/js/scrolltopcontrol.js"></script>
+	<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Allerta' />
+	<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Allerta' />
+	<script type="text/javascript" src="../catalog/view/javascript/jquery/jquery.ocxautosuggest_search.js"></script>
+	<script type="text/javascript" src="../catalog/view/javascript/jquery/jquery.typewatch.js"></script>
+	<script type="text/javascript" src="../catalog/view/javascript/jquery/jquery.highlight.js"></script>
+	<script type="text/javascript"
+		src="../catalog/view/javascript/jquery/nivo-slider/jquery.nivo.slider.pack.js"></script>
+	<script type="text/javascript" src="../catalog/view/javascript/jquery/jquery.jcarousel.min.js"></script>
+	<script type="text/javascript" src="../catalog/view/javascript/social-float/jquery.social.share.1.2.js"></script>
+	<script type="text/javascript" src="../js/ssl.js"> </script> <!-- ***** SSL ***** -->
+	<script type="text/javascript" src="../js/ssl.js"></script> <!-- ***** TWITTER API INTEGRATION STARTS HERE ***** -->
+	<script type="text/javascript" src="../js/ssl.js"></script> <!-- ***** Social Sharing ***** -->
+	<script type="text/javascript" src="../js/ssl.js"></script> <!-- ***** Auto Suggest ***** -->
+</head>
+
+<body>
+	<!-- ***** Headeer ***** -->
+	<div class="header"> </div>
+
+	<div id="content-wrapper">
+		<div class="container-wrapper">
+			<div id="notification"></div>
+			<!-- FULL HEADER WIDTH ENDS HERE -->
+
+			<div id="content">
+				<div id="popupAutoSuggest">
+					<a id="popupAutoSuggestClose"></a>
+					<div id="popupAutoSuggestContent"></div>
+				</div>
+				<div class="breadcrumb">
+					<ul>
+						<li><a href="../index.html">Home</a></li>
+					</ul>
+					<ul>
+						<li><a href="./search.html">Search</a></li>
+					</ul>
+				</div>
+				<div class="content">
+					<div class="search-wrapper">
+						<div id="search-container">
+							<input type="search" id="search-input" placeholder="Search product name here.." />
+							<button id="search">Search</button>
+						</div>
+						<div id="buttons">
+							<button class="filter-button-value" onclick="filterProduct('all')">All</button>
+							<button class="filter-button-value" onclick="filterProduct('Topwear')">
+								Topwear
+							</button>
+							<button class="filter-button-value" onclick="filterProduct('Bottomwear')">
+								Bottomwear
+							</button>
+							<button class="filter-button-value" onclick="filterProduct('Jacket')">
+								Jacket
+							</button>
+							<button class="filter-button-value" onclick="filterProduct('Watch')">
+								Watch
+							</button>
+						</div>
+						<div id="products"></div>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript">
+				$('#content input[name=\'filter_name\']').keydown(function (e) {
+					if (e.keyCode == 13) {
+						$('#button-search').trigger('click');
+					}
+				});
+
+				$('#button-search').bind('click', function () {
+					url = 'index.php?route=product/search';
+
+					var filter_name = $('#content input[name=\'filter_name\']').attr('value');
+
+					if (filter_name) {
+						url += '&filter_name=' + encodeURIComponent(filter_name);
+					}
+
+					var filter_category_id = $('#content select[name=\'filter_category_id\']').attr('value');
+
+					if (filter_category_id > 0) {
+						url += '&filter_category_id=' + encodeURIComponent(filter_category_id);
+					}
+
+					var filter_sub_category = $('#content input[name=\'filter_sub_category\']:checked').attr('value');
+
+					if (filter_sub_category) {
+						url += '&filter_sub_category=true';
+					}
+
+					var filter_description = $('#content input[name=\'filter_description\']:checked').attr('value');
+
+					if (filter_description) {
+						url += '&filter_description=true';
+					}
+
+					location = url;
+				});
+
+				function display(view) {
+					if (view == 'list') {
+						$('.product-grid').attr('class', 'product-list');
+
+						$('.product-list > div').each(function (index, element) {
+							html = '<div class="right">';
+							html += '  <div class="cart">' + $(element).find('.cart').html() + '</div>';
+							html += '  <div class="wishlist">' + $(element).find('.wishlist').html() + '</div>';
+							html += '  <div class="compare">' + $(element).find('.compare').html() + '</div>';
+							html += '</div>';
+
+							html += '<div class="left">';
+
+							var image = $(element).find('.image').html();
+
+							if (image != null) {
+								html += '<div class="image">' + image + '</div>';
+							}
+
+							var price = $(element).find('.price').html();
+
+							if (price != null) {
+								html += '<div class="price">' + price + '</div>';
+							}
+
+							html += '  <div class="name">' + $(element).find('.name').html() + '</div>';
+							html += '  <div class="description">' + $(element).find('.description').html() + '</div>';
+
+							var rating = $(element).find('.rating').html();
+
+							if (rating != null) {
+								html += '<div class="rating">' + rating + '</div>';
+							}
+
+							html += '</div>';
+
+
+							$(element).html(html);
+						});
+
+						$('.display').html('<b>Display:</b> List <b>/</b> <a onclick="display(\'grid\');">Grid</a>');
+
+						$.cookie('display', 'list');
+					} else {
+						$('.product-list').attr('class', 'product-grid');
+
+						$('.product-grid > div').each(function (index, element) {
+							html = '';
+
+							var image = $(element).find('.image').html();
+
+							if (image != null) {
+								html += '<div class="image">' + image + '</div>';
+							}
+
+							html += '<div class="name">' + $(element).find('.name').html() + '</div>';
+							html += '<div class="description">' + $(element).find('.description').html() + '</div>';
+
+							var price = $(element).find('.price').html();
+
+							if (price != null) {
+								html += '<div class="price">' + price + '</div>';
+							}
+
+							var rating = $(element).find('.rating').html();
+
+							if (rating != null) {
+								html += '<div class="rating">' + rating + '</div>';
+							}
+
+							html += '<div class="cart">' + $(element).find('.cart').html() + '</div>';
+							html += '<div class="wishlist">' + $(element).find('.wishlist').html() + '</div>';
+							html += '<div class="compare">' + $(element).find('.compare').html() + '</div>';
+
+							$(element).html(html);
+						});
+
+						$('.display').html('<b>Display:</b> <a onclick="display(\'list\');">List</a> <b>/</b> Grid');
+
+						$.cookie('display', 'grid');
+					}
+				}
+
+				view = $.cookie('display');
+
+				if (view) {
+					display(view);
+				} else {
+					display('list');
+				}
+			</script>
+
+			<div id="footer"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$("#tabs a").tabs();
+	</script> <!--Tabs-->
+
+	<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+	<div class="elfsight-app-56121f74-8e81-435e-9f8b-168c8ce1a45a" data-elfsight-app-lazy></div>
+	<!--Social Share-->
+
+	<!--Start of Tawk.to Script-->
+	<script type="text/javascript">
+		var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+		(function () {
+			var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+			s1.async = true;
+			s1.src = 'https://embed.tawk.to/66068318a0c6737bd1262e7d/1hq4n06d1';
+			s1.charset = 'UTF-8';
+			s1.setAttribute('crossorigin', '*');
+			s0.parentNode.insertBefore(s1, s0);
+		})();
+	</script>
+	<!--End of Tawk.to Script-->
+	<script src="../js/header.js" type="text/javascript"></script> <!-- ***** Headeer ***** -->
+	<script src="../js/footer.js" type="text/javascript"></script> <!-- ***** Footer ***** -->
+	<script src="../js/search-filter.js" type="text/javascript"></script> <!-- ***** Product-search ***** -->
+</body>
+
+</html>
